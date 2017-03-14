@@ -1,0 +1,14 @@
+---
+- hosts: 127.0.0.1
+
+  connection: local
+  
+  tasks:
+  - name: "Create test file"
+    become: true
+    copy:
+      src: static/test.txt
+      dest: /tmp/test/txt
+      mode: 0755
+      owner: root
+      group: root
